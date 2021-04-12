@@ -1,10 +1,43 @@
 :root {
-  --clr-black: hsl(0, %0, 0%);
+  --clr-black: hsl(0, 0%, 0%);
   --clr-white: hsl(0, 0%, 100%);
-  --clr-gray-500: hsl(0%, 0%, 59%);
-  --clr-gray-800: hsl(0%, 0%, 17%);
+  --clr-gray-500: hsl(0, 0%, 59%);
+  --clr-gray-800: hsl(0, 0%, 17%);
 
-  --fs-input: 1.4em;
+  --fs-input: 1rem;
+  --fs-label: 0.7rem;
+  --fs-value: 1.2rem;
+  --fs-title: 1.8rem;
+
+  --max-width: 70em;
+  --padding: 1.3em;
+  --element-spacing: var(--padding);
+  --br: 1em;
+
+  --header-height: 35vh;
+  --main-height: 65vh;
+}
+
+@media screen and (min-width: 500px) {
+  :root {
+    --header-height: 25vh;
+    --main-height: 75vh;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --element-spacing: 2.5em;
+    --header-height: 31vh;
+    --main-height: 69vh;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  :root {
+    --header-height: 26vh;
+    --main-height: 74vh;
+  }
 }
 
 html,
@@ -12,6 +45,12 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
+  background: rgb(88, 133, 250);
+  background: linear-gradient(
+    267deg,
+    rgba(88, 133, 250, 1) 0%,
+    rgba(72, 60, 159, 1) 100%
+  );
 }
 
 body {

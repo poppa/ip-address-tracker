@@ -1,0 +1,87 @@
+[
+  {
+    "ip": "217.213.101.234",
+    "location": {
+      "country": "SE",
+      "region": "V\u00e4sternorrland County",
+      "city": "Sel\u00e5nger",
+      "lat": 62.4083,
+      "lng": 17.20734,
+      "postalCode": "",
+      "timezone": "+02:00",
+      "geonameId": 8133027
+    },
+    "domains": ["host-217-213-101-234.mobileonline.telia.com"],
+    "as": {
+      "asn": 3301,
+      "name": "Telia Sweden",
+      "route": "217.208.0.0/13",
+      "domain": "http://www.telia.se",
+      "type": "NSP"
+    },
+    "isp": "TELIANET",
+    "proxy": { "proxy": false, "vpn": false, "tor": false }
+  },
+  {
+    "ip": "212.247.29.226",
+    "location": {
+      "country": "SE",
+      "region": "\u00d6sterg\u00f6tland County",
+      "city": "Link\u00f6ping",
+      "lat": 58.41086,
+      "lng": 15.62157,
+      "postalCode": "",
+      "timezone": "+02:00",
+      "geonameId": 2694762
+    },
+    "domains": [
+      "getroxen.com",
+      "roxen.com",
+      "roxen.com.jm",
+      "roxen.org",
+      "roxen.se"
+    ],
+    "as": {
+      "asn": 1257,
+      "name": "TELE2",
+      "route": "212.247.0.0/16",
+      "domain": "http://www.tele2.com",
+      "type": "Cable/DSL/ISP"
+    },
+    "isp": "TELE2",
+    "proxy": { "proxy": false, "vpn": false, "tor": false }
+  },
+  {
+    "ip": "8.8.8.8",
+    "location": {
+      "country": "US",
+      "region": "California",
+      "city": "Mountain View",
+      "lat": 37.40599,
+      "lng": -122.078514,
+      "postalCode": "94043",
+      "timezone": "-07:00",
+      "geonameId": 5375481
+    },
+    "domains": [
+      "0d2.net",
+      "003725.com",
+      "0f6.b0094c.cn",
+      "007515.com",
+      "0guhi.jocose.cn"
+    ],
+    "as": {
+      "asn": 15169,
+      "name": "Google LLC",
+      "route": "8.8.8.0/24",
+      "domain": "https://about.google/intl/en/",
+      "type": "Content"
+    },
+    "isp": "Google LLC",
+    "proxy": {
+      "proxy": false,
+      "vpn": false,
+      "tor": false
+    }
+  }
+]
