@@ -5,16 +5,11 @@ export type LatLng = [number, number]
 let map: L.Map
 let marker: L.Marker
 const defaultZoom = 13
+const initZoom = 8
 
 export function initMap(latLng: LatLng): void {
   const L = window.L
-  map = L.map('map', { zoomControl: false }).setView(latLng, defaultZoom)
-  const icon = L.icon({
-    iconUrl: '/images/icon-location.svg',
-    iconSize: [46, 56],
-    iconAnchor: [23, 58]
-  })
-  marker = L.marker(latLng, { icon }).addTo(map)
+  map = L.map('map', { zoomControl: false }).setView(latLng, initZoom)
   L.tileLayer(
     `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}` +
       `?access_token=${MapBoxAccessToken}`,
@@ -33,6 +28,16 @@ export function initMap(latLng: LatLng): void {
 }
 
 export function updateMap(latLng: LatLng) {
+  if (!marker) {
+    const icon = window.L.icon({
+      iconUrl: '/images/icon-location.svg',
+      iconSize: [46, 56],
+      iconAnchor: [23, 58]
+    })
+
+    marker = window.L.marker(latLng, { icon }).addTo(map)
+  }
+
   marker.setLatLng(latLng)
   // TODO: Calculate distance to new dest, and if not too far
   //       use map.flyTo()

@@ -1,0 +1,41 @@
+@use 'media' as *;
+
+:root {
+  --clr-black: hsl(0, 0%, 0%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-gray-500: hsl(0, 0%, 59%);
+  --clr-gray-800: hsl(0, 0%, 17%);
+
+  --clr-error-bg: hsl(16, 56%, 89%);
+  --clr-error-primary: hsl(0, 100%, 27%);
+  --clr-error-secondary: hsl(16, 52%, 62%);
+
+  --fs-input: 1rem;
+  --fs-label: 0.7rem;
+  --fs-value: 1.2rem;
+  --fs-title: 1.8rem;
+
+  --max-width: 70em;
+  --padding: 1.3em;
+  --element-spacing: var(--padding);
+  --br: 1em;
+
+  --header-height: 35vh;
+  --main-height: 65vh;
+
+  @include small {
+    --header-height: 25vh;
+    --main-height: 75vh;
+  }
+
+  @include medium {
+    --element-spacing: 2.5em;
+    --header-height: 31vh;
+    --main-height: 69vh;
+  }
+
+  @include large {
+    --header-height: 26vh;
+    --main-height: 74vh;
+  }
+}

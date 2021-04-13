@@ -1,0 +1,54 @@
+form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  margin-top: var(--element-spacing);
+}
+
+input {
+  display: block;
+  border: 0;
+  background: var(--clr-white);
+  font-size: var(--fs-input);
+  border-top-left-radius: var(--br);
+  border-bottom-left-radius: var(--br);
+  padding: var(--padding);
+  flex-grow: 1;
+
+  &:focus:not(:disabled) {
+    outline: 0;
+  }
+
+  &:disabled {
+    color: var(--clr-gray-500);
+  }
+}
+
+button {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5em;
+  height: 100%;
+  border-top-right-radius: var(--br);
+  border-bottom-right-radius: var(--br);
+
+  &:hover:not(:disabled) {
+    background-color: var(--clr-gray-800);
+  }
+
+  &:disabled {
+    color: var(--clr-gray-500);
+    cursor: progress;
+  }
+
+  :global(svg) {
+    stroke: currentColor;
+  }
+}

@@ -1,0 +1,14 @@
+main {
+  z-index: 1;
+  position: relative;
+  height: var(--main-height);
+  transition: opacity 300ms ease-in;
+
+  &.init {
+    opacity: 0;
+  }
+}
+
+.attribution {
+  display: none;
+}

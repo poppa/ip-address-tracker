@@ -1,21 +1,14 @@
-const baseUri =
-  'https://geo.ipify.org/api/v1?' +
-  'apiKey=at_TrQTPleXJIxZp6JsheRZQDsCSrPIb&ipAddress=#'
-
-const isDebug = true
-
-console.log(`Is debug?`, isDebug)
+const baseUri = 'https://json.geoiplookup.io/'
 
 export async function query(ipOrDomain: string): Promise<Ip | undefined> {
-  const uri = isDebug ? '/sample.json' : baseUri.replace('#', ipOrDomain)
+  const uri = `${baseUri}${ipOrDomain}`
   const query = await fetch(uri)
-  if (query.ok) {
-    const res = (await query.json()) as Ip | Ip[]
 
-    if (Array.isArray(res)) {
-      const idx = Math.floor(Math.random() * res.length)
-      console.log(`IDX:`, idx)
-      return res[idx]
+  if (query.ok) {
+    const res = (await query.json()) as Ip | IpError
+
+    if (!res.success) {
+      throw new Error(`${(res as IpError).error}`)
     }
 
     return res
@@ -26,36 +19,33 @@ export async function query(ipOrDomain: string): Promise<Ip | undefined> {
   return undefined
 }
 
+interface IpError {
+  success: false
+  error: string
+}
+
 interface Ip {
   ip: string
-  location: Location
-  domains: string[]
-  as: As
   isp: string
-  proxy: Proxy
-}
-
-interface Proxy {
-  proxy: boolean
-  vpn: boolean
-  tor: boolean
-}
-
-interface As {
-  asn: number
-  name: string
-  route: string
-  domain: string
-  type: string
-}
-
-interface Location {
-  country: string
-  region: string
+  org: string
+  hostname: string
+  latitude: number
+  longitude: number
+  postal_code: string
   city: string
-  lat: number
-  lng: number
-  postalCode: string
-  timezone: string
-  geonameId: number
+  country_code: string
+  country_name: string
+  continent_code: string
+  continent_name: string
+  region: string
+  district: string
+  timezone_name: string
+  connection_type: string
+  asn_number: number
+  asn_org: string
+  asn: string
+  currency_code: string
+  currency_name: string
+  success: true
+  premium: boolean
 }
