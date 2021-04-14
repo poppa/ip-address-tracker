@@ -3,7 +3,7 @@
 .content {
   background-color: var(--clr-white);
   margin: var(--element-spacing) 0 0;
-  padding: var(--padding);
+  padding: var(--content-padding);
   width: 100%;
   max-width: var(--max-width);
   border-radius: var(--br);
@@ -13,7 +13,6 @@
 
   @include medium {
     text-align: left;
-    padding: calc(var(--padding) * 2);
   }
 
   &.init {

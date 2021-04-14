@@ -4,7 +4,6 @@ form {
   display: flex;
   flex-direction: row;
   align-content: stretch;
-  margin-top: calc(var(--element-spacing) / 1.5);
 }
 
 input {
@@ -43,7 +42,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.5em;
+  width: 58px;
   height: 100%;
   border-top-right-radius: var(--br);
   border-bottom-right-radius: var(--br);

@@ -11,24 +11,39 @@
   --clr-error-secondary: hsl(16, 52%, 62%);
 
   --fs-input: 1.1rem;
-  --fs-label: 0.8rem;
-  --fs-value: 1.6rem;
-  --fs-title: 2rem;
+  --fs-label: 0.6rem;
+  --fs-value: 1.2rem;
+  --fs-title: 1.6rem;
 
+  // Border radius
+  --br: 16px;
   --max-width: 1110px;
   --form-max-width: 555px;
-  --padding: 1.3em;
-  --element-spacing: var(--padding);
-  --br: 1em;
+
+  // It's seriously annoying that whoever made the original design didn't base
+  // alla paddings and margins from a single value. There are padding values
+  // all over the place!
+
+  --padding: 18px;
+  --content-padding: 24px;
+  --header-padding: 0 24px;
+  --element-spacing: 24px;
+  --title-margin: 29px 0 32px;
 
   --header-height: 230px;
   --main-height: calc(100vh - 230px);
 
   @include medium {
+    --fs-input: 1.1rem;
+    --fs-label: 0.8rem;
+    --fs-value: 1.6rem;
+    --fs-title: 2rem;
+
+    --title-margin: 32px 0 30px;
     --element-spacing: 48px;
-    --padding: 18px;
     --header-height: 270px;
     --main-height: calc(100vh - 270px);
+    --content-padding: 38px 32px;
   }
 
   @include large {
