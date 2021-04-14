@@ -20,22 +20,17 @@
   --element-spacing: var(--padding);
   --br: 1em;
 
-  --header-height: 35vh;
-  --main-height: 65vh;
-
-  @include small {
-    --header-height: 25vh;
-    --main-height: 75vh;
-  }
+  --header-height: 230px;
+  --main-height: calc(100vh - 230px);
 
   @include medium {
-    --element-spacing: 2.5em;
-    --header-height: 31vh;
-    --main-height: 69vh;
+    --element-spacing: 2em;
+    --header-height: 270px;
+    --main-height: calc(100vh - 270px);
   }
 
   @include large {
-    --header-height: 26vh;
-    --main-height: 74vh;
+    --header-height: 260px;
+    --main-height: calc(100vh - 260px);
   }
 }

@@ -3,152 +3,106 @@
 @use 'style/header';
 @use 'style/form';
 @use 'style/main';
+@use 'style/content';
+@use 'style/grid';
 
-dl {
-  background-color: var(--clr-white);
-  margin: var(--element-spacing) 0 0;
-  padding: var(--padding);
-  width: 100%;
-  max-width: var(--max-width);
-  border-radius: var(--br);
-  text-align: center;
-  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.4);
-  transition: opacity 300ms ease-in;
-}
+// dd + dt {
+//   margin-top: calc(var(--padding) * 1.5);
+// }
 
-dl.init {
-  opacity: 0;
-}
+// @media screen and (min-width: 500px) {
+//   dl.error {
+//     display: block;
+//   }
 
-dl.error {
-  background-color: var(--clr-error-bg);
-}
-dl.error dt {
-  color: var(--clr-error-primary);
-}
+//   dt {
+//     text-align: left;
+//     margin: 0;
+//   }
 
-dl.error dd {
-  color: var(--clr-error-secondary);
-}
+//   dd {
+//     text-align: left;
+//   }
+// }
 
-dl.in-progress dd {
-  color: var(--clr-gray-500);
-}
+// @media screen and (min-width: 620px) {
+//   dl {
+//     display: grid;
+//     grid-auto-columns: 1fr;
+//     column-gap: calc(var(--padding) * 2);
+//     grid-template-areas:
+//       'item1-dt item2-dt'
+//       'item1-dd item2-dd'
+//       'item3-dt item4-dt'
+//       'item3-dd item4-dd';
+//     padding: calc(var(--padding) * 1.5);
+//   }
 
-dt {
-  text-transform: uppercase;
-  color: var(--clr-gray-500);
-  font-weight: 700;
-  font-size: var(--fs-label);
-  letter-spacing: 0.1em;
-}
+//   dt,
+//   dd {
+//     text-align: left;
+//     align-self: flex-start;
+//     margin: 0;
+//   }
 
-dd {
-  font-weight: 500;
-  font-size: var(--fs-value);
-  color: var(--clr-gray-800);
-  margin-left: 0;
-  margin-top: 0.4em;
-  transition: color 250ms ease-in;
-}
+//   dd {
+//     margin-bottom: var(--padding);
+//   }
 
-dd + dt {
-  margin-top: calc(var(--padding) * 1.5);
-}
+//   dd + dt {
+//     margin-top: 0;
+//   }
 
-@media screen and (min-width: 500px) {
-  dl.error {
-    display: block;
-  }
+//   dt,
+//   dd {
+//     content: '';
+//     display: block;
+//     border-right: 1px solid gray;
+//   }
 
-  dt {
-    text-align: left;
-    margin: 0;
-  }
+//   /* FIRST */
+//   dt:nth-of-type(1) {
+//     grid-area: item1-dt;
+//   }
 
-  dd {
-    text-align: left;
-  }
-}
+//   dd:nth-of-type(1) {
+//     grid-area: item1-dd;
+//   }
 
-@media screen and (min-width: 620px) {
-  dl {
-    display: grid;
-    grid-auto-columns: 1fr;
-    column-gap: calc(var(--padding) * 2);
-    grid-template-areas:
-      'item1-dt item2-dt'
-      'item1-dd item2-dd'
-      'item3-dt item4-dt'
-      'item3-dd item4-dd';
-    padding: calc(var(--padding) * 1.5);
-  }
+//   /* SECOND */
 
-  dt,
-  dd {
-    text-align: left;
-    align-self: flex-start;
-    margin: 0;
-  }
+//   dt:nth-of-type(2) {
+//     grid-area: item2-dt;
+//   }
 
-  dd {
-    margin-bottom: var(--padding);
-  }
+//   dd:nth-of-type(2) {
+//     grid-area: item2-dd;
+//   }
 
-  dd + dt {
-    margin-top: 0;
-  }
+//   /* THIRD */
 
-  dt,
-  dd {
-    content: '';
-    display: block;
-    border-right: 1px solid gray;
-  }
+//   dt:nth-of-type(3) {
+//     grid-area: item3-dt;
+//   }
 
-  /* FIRST */
-  dt:nth-of-type(1) {
-    grid-area: item1-dt;
-  }
+//   dd:nth-of-type(3) {
+//     grid-area: item3-dd;
+//   }
 
-  dd:nth-of-type(1) {
-    grid-area: item1-dd;
-  }
+//   /* FOURTH */
+//   dt:nth-of-type(4) {
+//     grid-area: item4-dt;
+//   }
 
-  /* SECOND */
+//   dd:nth-of-type(4) {
+//     grid-area: item4-dd;
+//   }
+// }
 
-  dt:nth-of-type(2) {
-    grid-area: item2-dt;
-  }
-
-  dd:nth-of-type(2) {
-    grid-area: item2-dd;
-  }
-
-  /* THIRD */
-
-  dt:nth-of-type(3) {
-    grid-area: item3-dt;
-  }
-
-  dd:nth-of-type(3) {
-    grid-area: item3-dd;
-  }
-
-  /* FOURTH */
-  dt:nth-of-type(4) {
-    grid-area: item4-dt;
-  }
-
-  dd:nth-of-type(4) {
-    grid-area: item4-dd;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  dl {
-    grid-template-areas:
-      'item1-dt item2-dt item3-dt item4-dt'
-      'item1-dd item2-dd item3-dd item4-dd';
-  }
-}
+// @media screen and (min-width: 960px) {
+//   dl {
+//     grid-template-areas:
+//       'item1-dt item2-dt item3-dt item4-dt'
+//       'item1-dd item2-dd item3-dd item4-dd';
+//   }
+// }

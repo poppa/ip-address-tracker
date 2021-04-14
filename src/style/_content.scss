@@ -1,0 +1,39 @@
+@use 'media' as *;
+
+.content {
+  background-color: var(--clr-white);
+  margin: var(--element-spacing) 0 0;
+  padding: var(--padding);
+  width: 100%;
+  max-width: var(--max-width);
+  border-radius: var(--br);
+  text-align: center;
+  box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.4);
+  transition: opacity 300ms ease-in;
+
+  @include medium {
+    text-align: left;
+    padding: calc(var(--padding) * 2);
+  }
+
+  &.init {
+    opacity: 0;
+  }
+
+  &.in-progress dd {
+    color: var(--clr-gray-500);
+  }
+
+  &.error {
+    display: block;
+    background-color: var(--clr-error-bg);
+
+    dt {
+      color: var(--clr-error-primary);
+    }
+
+    dd {
+      color: var(--clr-error-secondary);
+    }
+  }
+}

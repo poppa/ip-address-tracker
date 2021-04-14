@@ -5,6 +5,11 @@
   import { initMap, updateMap } from './map'
   import { query } from './query'
 
+  // let ipaddress = '192.160.0.123'
+  // let location = 'Some Location, Somwhere, US'
+  // let timezone = 'Stockholm/Europe'
+  // let isp = 'Some Special ISP'
+
   let ipaddress = ''
   let location = ''
   let timezone = ''
@@ -24,7 +29,7 @@
 
       if (res) {
         ipaddress = res.ip
-        location = `${res.city}, ${res.district} ${res.region}, ${res.country_name}`
+        location = `${res.city} <small>${res.district} ${res.region}, ${res.country_name}</small>`
         timezone = `${res.timezone_name}`
         isp = res.isp
         lng = res.longitude
@@ -65,25 +70,37 @@
       {@html inProgress ? iconSpinner : iconArrow}
     </button>
   </form>
-  <dl
-    class:in-progress={inProgress}
-    class:error={!!error}
+  <div
+    class="content"
     class:init={!error && !ipaddress}
+    class:error={!!error}
+    class:in-progress={inProgress}
+    class:valid={!!ipaddress}
   >
     {#if error}
-      <dt>Error</dt>
-      <dd>{error.message}</dd>
+      <dl>
+        <dt>Error</dt>
+        <dd>{error.message}</dd>
+      </dl>
     {:else}
-      <dt>IP address</dt>
-      <dd>{ipaddress}</dd>
-      <dt>Location</dt>
-      <dd>{location}</dd>
-      <dt>Timezone</dt>
-      <dd>{timezone}</dd>
-      <dt>ISP</dt>
-      <dd>{isp}</dd>
+      <dl>
+        <dt>IP address</dt>
+        <dd>{ipaddress}</dd>
+      </dl>
+      <dl>
+        <dt>Location</dt>
+        <dd>{@html location}</dd>
+      </dl>
+      <dl>
+        <dt>Timezone</dt>
+        <dd>{timezone}</dd>
+      </dl>
+      <dl>
+        <dt>ISP</dt>
+        <dd>{isp}</dd>
+      </dl>
     {/if}
-  </dl>
+  </div>
 </header>
 
 <main id="map" class:init={!error && !ipaddress} />
