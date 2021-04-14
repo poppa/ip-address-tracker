@@ -1,13 +1,14 @@
 form {
   width: 100%;
-  max-width: 600px;
+  max-width: var(--form-max-width);
   display: flex;
   flex-direction: row;
   align-content: stretch;
-  margin-top: var(--element-spacing);
+  margin-top: calc(var(--element-spacing) / 1.5);
 }
 
 input {
+  font-family: inherit;
   display: block;
   border: 0;
   background: var(--clr-white);
@@ -23,6 +24,14 @@ input {
 
   &:disabled {
     color: var(--clr-gray-500);
+  }
+
+  &:valid {
+    box-shadow: 0 0 3px green;
+  }
+
+  &:not(:valid):not(:disabled) {
+    box-shadow: 0 0 0px 2px red;
   }
 }
 

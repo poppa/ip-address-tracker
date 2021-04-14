@@ -3,7 +3,7 @@ header {
   position: relative;
   height: var(--header-height);
   padding: var(--padding);
-  padding-top: var(--element-spacing);
+  padding-top: calc(var(--element-spacing) / 1.5);
   background-image: url('/images/pattern-bg.png');
   background-repeat: no-repeat;
   background-position: center;

@@ -17,6 +17,8 @@ body {
     rgba(88, 133, 250, 1) 0%,
     rgba(72, 60, 159, 1) 100%
   );
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *,

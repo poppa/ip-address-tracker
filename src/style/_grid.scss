@@ -13,14 +13,16 @@ dt {
   color: var(--clr-gray-500);
   font-weight: 700;
   font-size: var(--fs-label);
-  letter-spacing: 0.1em;
+  letter-spacing: 1.2px;
 }
 
 dd {
   font-weight: 500;
   font-size: var(--fs-value);
   color: var(--clr-gray-800);
-  margin-left: 0;
+  // The way larger font-size makes the DD visually pull slightly to the right.
+  // That extra pixel or so is annoyingly apparent.
+  margin-left: -1px;
   margin-top: calc(var(--padding) / 4);
   transition: color 250ms ease-in;
 

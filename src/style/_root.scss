@@ -10,12 +10,13 @@
   --clr-error-primary: hsl(0, 100%, 27%);
   --clr-error-secondary: hsl(16, 52%, 62%);
 
-  --fs-input: 1rem;
-  --fs-label: 0.7rem;
-  --fs-value: 1.2rem;
-  --fs-title: 1.8rem;
+  --fs-input: 1.1rem;
+  --fs-label: 0.8rem;
+  --fs-value: 1.6rem;
+  --fs-title: 2rem;
 
-  --max-width: 70em;
+  --max-width: 1110px;
+  --form-max-width: 555px;
   --padding: 1.3em;
   --element-spacing: var(--padding);
   --br: 1em;
@@ -24,13 +25,14 @@
   --main-height: calc(100vh - 230px);
 
   @include medium {
-    --element-spacing: 2em;
+    --element-spacing: 48px;
+    --padding: 18px;
     --header-height: 270px;
     --main-height: calc(100vh - 270px);
   }
 
   @include large {
-    --header-height: 260px;
-    --main-height: calc(100vh - 260px);
+    --header-height: 280px;
+    --main-height: calc(100vh - 280px);
   }
 }

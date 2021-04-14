@@ -4,11 +4,9 @@
   import iconSpinner from './icon-spinner'
   import { initMap, updateMap } from './map'
   import { query } from './query'
+  import { registerValidator } from './utils'
 
-  // let ipaddress = '192.160.0.123'
-  // let location = 'Some Location, Somwhere, US'
-  // let timezone = 'Stockholm/Europe'
-  // let isp = 'Some Special ISP'
+  const isDebug = true
 
   let ipaddress = ''
   let location = ''
@@ -17,6 +15,13 @@
   let lat = 0
   let lng = 0
   let error: Error | undefined
+
+  if (isDebug) {
+    ipaddress = '192.160.0.123'
+    location = 'Some Location, Somwhere, US'
+    timezone = 'Stockholm/Europe'
+    isp = 'Some Special ISP'
+  }
 
   let ipquery = ''
   let inProgress = false
@@ -52,7 +57,10 @@
 
   onMount(() => {
     initMap([lat, lng])
-    queryLow().catch((e: Error) => (error = e))
+    if (!isDebug) {
+      queryLow().catch((e: Error) => (error = e))
+    }
+    registerValidator(document.querySelector('input[type="search"]'))
   })
 </script>
 
@@ -62,7 +70,7 @@
     <input
       type="search"
       name="ip"
-      placeholder="Search for IP address or domain"
+      placeholder="Search IP address or domain"
       disabled={inProgress}
       bind:value={ipquery}
     />
