@@ -25,6 +25,8 @@ dd {
   margin-left: -1px;
   margin-top: calc(var(--padding) / 4);
   transition: color 250ms ease-in;
+  overflow-wrap: break-word;
+  hyphens: auto;
 
   :global(small) {
     color: hsl(0, 0%, 45%);

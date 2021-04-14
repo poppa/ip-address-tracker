@@ -18,7 +18,7 @@
 
   if (isDebug) {
     ipaddress = '192.160.0.123'
-    location = 'Some Location, Somwhere, US'
+    location = 'My Location, <small>Somwhere, Someplace, Some Country</small>'
     timezone = 'Stockholm/Europe'
     isp = 'Some Special ISP'
   }
