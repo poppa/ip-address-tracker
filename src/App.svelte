@@ -76,6 +76,7 @@
       placeholder="Search IP address or domain"
       disabled={inProgress}
       bind:value={ipquery}
+      aria-label="Search IP address or domain"
     />
     <button aria-label="Search" disabled={inProgress}>
       {@html inProgress ? iconSpinner : iconArrow}
