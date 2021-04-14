@@ -1,15 +1,20 @@
 import { MapBoxAccessToken } from './constants'
+import { getDevice } from './utils'
 
 export type LatLng = [number, number]
 
 let map: L.Map
 let marker: L.Marker
 const defaultZoom = 13
-const initZoom = 8
+
+function getPanOffset(): number {
+  const device = getDevice()
+  return device === 'mobile' ? 120 : 0
+}
 
 export function initMap(latLng: LatLng): void {
   const L = window.L
-  map = L.map('map', { zoomControl: false }).setView(latLng, initZoom)
+  map = L.map('map', { zoomControl: false }).setView(latLng, defaultZoom)
   L.tileLayer(
     `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}` +
       `?access_token=${MapBoxAccessToken}`,
@@ -41,6 +46,13 @@ export function updateMap(latLng: LatLng) {
   marker.setLatLng(latLng)
   // TODO: Calculate distance to new dest, and if not too far
   //       use map.flyTo()
-  map.setView(latLng).setZoom(defaultZoom)
-  // map.flyTo([lat, lng], defaultZoom)
+  map.setView(latLng, defaultZoom)
+
+  const offset = getPanOffset()
+
+  if (offset) {
+    let center = map.project(latLng)
+    center = window.L.point(center.x, center.y - offset)
+    map.panTo(map.unproject(center))
+  }
 }

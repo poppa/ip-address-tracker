@@ -6,7 +6,8 @@
   import { query } from './query'
   import { registerValidator } from './utils'
 
-  const isDebug = true
+  // Set to true to not fetch you IP whenever the page hot-reloads
+  const isDebug = false
 
   let ipaddress = ''
   let location = ''
@@ -21,6 +22,8 @@
     location = 'My Location, <small>Somwhere, Someplace, Some Country</small>'
     timezone = 'Stockholm/Europe'
     isp = 'Some Special ISP'
+    lat = 62.4167
+    lng = 17.2598
   }
 
   let ipquery = ''

@@ -18,19 +18,15 @@ input {
   flex-grow: 1;
 
   &:focus:not(:disabled) {
-    outline: 0;
+    outline: none;
   }
 
   &:disabled {
     color: var(--clr-gray-500);
   }
 
-  &:valid {
-    box-shadow: 0 0 3px green;
-  }
-
   &:not(:valid):not(:disabled) {
-    box-shadow: 0 0 0px 2px red;
+    background-color: hsl(0, 100%, 87%);
   }
 }
 
@@ -47,8 +43,10 @@ button {
   border-top-right-radius: var(--br);
   border-bottom-right-radius: var(--br);
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled),
+  &:focus:not(:disabled) {
     background-color: var(--clr-gray-800);
+    outline: none;
   }
 
   &:disabled {

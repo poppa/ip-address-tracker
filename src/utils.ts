@@ -32,3 +32,10 @@ export function registerValidator(elem: HTMLInputElement | undefined): void {
     })
   }
 }
+
+export function getDevice(): string {
+  const prop = window
+    .getComputedStyle(document.documentElement)
+    .getPropertyValue('--device')
+  return (prop ?? '').trim()
+}

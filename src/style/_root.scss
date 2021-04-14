@@ -33,6 +33,8 @@
   --header-height: 230px;
   --main-height: calc(100vh - 230px);
 
+  --device: mobile;
+
   @include medium {
     --fs-input: 1.1rem;
     --fs-label: 0.8rem;
@@ -44,10 +46,13 @@
     --header-height: 270px;
     --main-height: calc(100vh - 270px);
     --content-padding: 38px 32px;
+
+    --device: tablet;
   }
 
   @include large {
     --header-height: 280px;
     --main-height: calc(100vh - 280px);
+    --device: desktop;
   }
 }
